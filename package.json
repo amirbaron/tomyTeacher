@@ -1,5 +1,5 @@
 {
-  "name": "tommyTeacher",
+  "name": "tomyTeacher",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -19,8 +19,18 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "expo": "^18.0.3",
+    "@expo/vector-icons": "^5.0.0",
+    "expo": "^19.0.0",
+    "native-base": "2.3.0",
     "react": "16.0.0-alpha.12",
-    "react-native": "^0.45.1"
+    "react-native": "^0.46.1",
+    "react-native-easy-grid": "^0.1.14",
+    "react-native-img-button": "^1.0.1",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.2",
+    "redux-actions": "^2.2.1",
+    "redux-thunk": "^2.2.0",
+    "remote-redux-devtools": "^0.5.12",
+    "react-native-svg": "^5.3.0"
   }
 }
