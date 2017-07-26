@@ -4,6 +4,7 @@ import {Col, Row, Grid} from 'react-native-easy-grid';
 import {StyleSheet, Text, View, Image} from 'react-native';
 import {Svg, Path} from 'react-native-svg';
 import {Circle} from "./Circle";
+import {getImage} from '../../assets/images'
 
 export class QuestionsGrid extends Component {
 
@@ -12,30 +13,47 @@ export class QuestionsGrid extends Component {
         this.game = {
             rows: [
                 {
-                    images: ['tomyTeacher/assets/ant.png',
-                        'tomyTeacher/assets/ant.png', 'tomyTeacher/assets/ant.png', 'tomyTeacher/assets/ant.png'],
+                    images: ['ant', 'chicken', 'snake'],
+                    correctAnswer: 1
+                },
+                {
+                    images: ['snail', 'rabbit', 'turtle'],
+                    correctAnswer: 1
+                },
+                {
+                    images: ['runningKid',
+                        'sittingBaby', 'crawlingBaby'],
                     correctAnswer: 0
                 },
                 {
-                    images: ['tomyTeacher/assets/ant.png',
-                        'tomyTeacher/assets/ant.png', 'tomyTeacher/assets/ant.png', 'tomyTeacher/assets/ant.png'],
-                    correctAnswer: 1
-                },
-                {
-                    images: ['tomyTeacher/assets/ant.png',
-                        'tomyTeacher/assets/ant.png', 'tomyTeacher/assets/ant.png', 'tomyTeacher/assets/ant.png'],
-                    correctAnswer: 3
-                },
-                {
-                    images: ['tomyTeacher/assets/ant.png',
-                        'tomyTeacher/assets/ant.png', 'tomyTeacher/assets/ant.png', 'tomyTeacher/assets/ant.png'],
+                    images: ['tricycle', 'blueBicycle', 'motorCycle'],
                     correctAnswer: 2
                 },
                 {
-                    images: ['tomyTeacher/assets/ant.png',
-                        'tomyTeacher/assets/ant.png', 'tomyTeacher/assets/ant.png', 'tomyTeacher/assets/ant.png'],
-                    correctAnswer: 1
+                    images: ['greenBicycle', 'runningBaby', 'runningMan'],
+                    correctAnswer: 0
                 },
+                {
+                    images: ['damselfly', 'dove', 'butterfly'],
+                    correctAnswer: 0
+                },
+                {
+                    images: ['sailingKid', 'motorboatKid', 'familyBoat'],
+                    correctAnswer: 0
+                },
+                {
+                    images: ['pig', 'horse', 'duck'],
+                    correctAnswer: 0
+                },
+                {
+                    images: ['redCar', 'runningTeenager', 'kidOnUnicycle'],
+                    correctAnswer: 0
+                },
+                {
+                    images: ['hawk', 'airplane', 'helicopter'],
+                    correctAnswer: 0
+                },
+
             ]
         }
     }
@@ -57,6 +75,7 @@ export class QuestionsGrid extends Component {
         return status;
 
     }
+
     dynamicRender = () => {
         return (
             <Container>
@@ -68,36 +87,42 @@ export class QuestionsGrid extends Component {
                     }}>
                         {this.game.rows.map((row, rowIndex) => {
 
-                            return <Row key={rowIndex}>
+                                return <Row key={rowIndex} >
                                     <Col key={rowIndex} style={{
                                         backgroundColor: 'transparent',
-                                        justifyContent:'center',
-                                        paddingLeft: 20,
-                                        width: 80,
+                                        justifyContent: 'center',
+                                        borderTopColor: 'black',
+                                        borderTopWidth: 0.5,
+                                        borderRightColor: 'black',
+                                        borderRightWidth: 0.5,
+                                        borderRadius: 0,
+                                        alignItems:'center',
+                                        flex: 1,
+                                        flexBasis: 0,
+                                        flexShrink: 0,
                                     }}>
                                         <Circle status={this.getStatus(rowIndex)}/>
                                     </Col>
-                                    {row.images.map((imgUrl, colIndex) => {
+                                    {row.images.map((imgName, colIndex) => {
                                         return <Col key={"" + rowIndex + " " + colIndex} style={{
-                                            backgroundColor: 'transparent'
+                                            backgroundColor: 'transparent',
+                                            flex: 3,
+                                            flexBasis: 0,
+                                            flexShrink: 0,
                                         }}>
                                             <Button style={{
-                                                flex: 1,
-                                                alignSelf: 'stretch',
-                                                alignItems: 'center',
+                                                width: '100%',
+                                                height: '100%',
                                                 justifyContent: 'center',
                                                 backgroundColor: 'transparent',
-                                                width: 150,
-                                                height: 150,
                                                 borderTopColor: 'black',
                                                 borderTopWidth: 0.5,
                                                 borderRightColor: 'black',
                                                 borderRightWidth: 0.5,
                                                 borderRadius: 0,
-
                                             }}>
-                                                <Image style={{width: 150, height: 150}}
-                                                       source={require('tomyTeacher/assets/ant.png')}/>
+                                                <Image resizeMode='cover'
+                                                       source={getImage(imgName)}/>
                                             </Button>
                                         </Col>
                                     })}
