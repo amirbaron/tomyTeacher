@@ -1,10 +1,10 @@
-This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
-Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
+Simulate [tomy teacher](https://hackaday.com/tag/tomy-teacher/) using react native. 
+This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app), so you can use the same commands and tools to run and contribute. 
 
 ## Table of Contents
 
-* [Updating to New Releases](#updating-to-new-releases)
+
 * [Available Scripts](#available-scripts)
   * [npm start](#npm-start)
   * [npm test](#npm-test)
@@ -15,7 +15,6 @@ Below you'll find information about performing common tasks. The most recent ver
 * [Environment Variables](#environment-variables)
   * [Configuring Packager IP Address](#configuring-packager-ip-address)
 * [Adding Flow](#adding-flow)
-* [Customizing App Display Name and Icon](#customizing-app-display-name-and-icon)
 * [Sharing and Deployment](#sharing-and-deployment)
   * [Publishing to Expo's React Native Community](#publishing-to-expos-react-native-community)
   * [Building an Expo "standalone" app](#building-an-expo-standalone-app)
@@ -27,13 +26,6 @@ Below you'll find information about performing common tasks. The most recent ver
   * [iOS Simulator won't open](#ios-simulator-wont-open)
   * [QR Code does not scan](#qr-code-does-not-scan)
 
-## Updating to New Releases
-
-You should only need to update the global installation of `create-react-native-app` very rarely, ideally never.
-
-Updating the `react-native-scripts` dependency of your app should be as simple as bumping the version number in `package.json` and reinstalling your project's dependencies.
-
-Upgrading to a new version of React Native requires updating the `react-native`, `react`, and `expo` package versions, and setting the correct `sdkVersion` in `app.json`. See the [versioning guide](https://github.com/react-community/create-react-native-app/blob/master/VERSIONS.md) for up-to-date information about package version compatibility.
 
 ## Available Scripts
 
@@ -82,13 +74,6 @@ This will start the process of "ejecting" from Create React Native App's build s
 
 **Warning:** Running eject is a permanent action (aside from whatever version control system you use). An ejected app will require you to have an [Xcode and/or Android Studio environment](https://facebook.github.io/react-native/docs/getting-started.html) set up.
 
-## Customizing App Display Name and Icon
-
-You can edit `app.json` to include [configuration keys](https://docs.expo.io/versions/latest/guides/configuration.html) under the `expo` key.
-
-To change your app's display name, set the `expo.name` key in `app.json` to an appropriate string.
-
-To set an app icon, set the `expo.icon` key in `app.json` to be either a local path or a URL. It's recommended that you use a 512x512 png file with transparency.
 
 ## Writing and Running Tests
 

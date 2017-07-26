@@ -40,6 +40,23 @@ export class QuestionsGrid extends Component {
         }
     }
 
+    getStatus(rowIndex) {
+        let status = "";
+        if (rowIndex % 4 === 0) {
+            status = "failed";
+        }
+        if (rowIndex % 4 === 1) {
+            status = "unknown";
+        }
+        if (rowIndex % 4 === 2) {
+            status = "success";
+        }
+        if (rowIndex % 4 === 3) {
+            status = "current";
+        }
+        return status;
+
+    }
     dynamicRender = () => {
         return (
             <Container>
@@ -50,14 +67,15 @@ export class QuestionsGrid extends Component {
                         borderWidth: 2,
                     }}>
                         {this.game.rows.map((row, rowIndex) => {
-                                return <Row key={rowIndex}>
+
+                            return <Row key={rowIndex}>
                                     <Col key={rowIndex} style={{
                                         backgroundColor: 'transparent',
                                         justifyContent:'center',
                                         paddingLeft: 20,
                                         width: 80,
                                     }}>
-                                        <Circle />
+                                        <Circle status={this.getStatus(rowIndex)}/>
                                     </Col>
                                     {row.images.map((imgUrl, colIndex) => {
                                         return <Col key={"" + rowIndex + " " + colIndex} style={{

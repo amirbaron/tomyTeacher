@@ -9,14 +9,21 @@ export class Circle extends Component {
     render() {
         let bgColor = this.state.blink.interpolate({
             inputRange: [0, 1],
-            outputRange: ['red', 'transparent']
+            outputRange: [0.3, 1]
         });
+
         let circleStyle = Object.assign({}, styles.circle)
-        circleStyle.backgroundColor = bgColor;
-        console.log(bgColor);
-        return (
-            <Animated.View style={{...circleStyle, backgroundColor:bgColor}}/>
-        )
+        if (this.props.status === 'failed' || this.props.status==='unknown') {
+            return <View  style={circleStyle}/>;
+        }
+        if (this.props.status === 'success') {
+            circleStyle.backgroundColor = 'green';
+            return <View  style={circleStyle}/>;
+        }
+        circleStyle.backgroundColor = 'red';
+        if (this.props.status === 'current') {
+           return <Animated.View style={{...circleStyle, opacity:bgColor}}/>;
+        }
     }
 
     componentDidMount() {
@@ -46,6 +53,6 @@ let styles = {
         width: 50,
         height: 50,
         borderRadius: 100 / 2,
-        backgroundColor: 'red',
+        backgroundColor: 'black',
     }
 }
